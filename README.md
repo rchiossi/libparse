@@ -76,8 +76,7 @@ An **EntryList** structure represents a sequential list of **Entry** objects. It
 list_size = 10
 list_offset = 0x1000
 
-basic_list = EntryList(bytestream, BasicEntry,
-                               list_size, list_offset)
+basic_list = EntryList(bytestream, BasicEntry, list_size, list_offset)
 ```
 
 In the example above the `basic_list` object will try to parse 10 entries of the type `BasicEntry` starting at offset `0x1000` of the ByteStream.
@@ -87,9 +86,8 @@ An **EntryTable** structure represents a group of structures of the same type, b
 
 ######Example:
 ```python
-basic_table = EntryTable(bytestream, BasicEntry,
-                                     basic_list,´field1´)
-``´
+basic_table = EntryTable(bytestream, BasicEntry, basic_list,´field1´)
+```
 
 In the example above the `basic_table` object will iterate through the `basic_list` object and use the `field1` value of each item in the list as offset to parse a `BasicEntry` entry.
 
