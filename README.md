@@ -108,4 +108,4 @@ print p.parse(basic_list)
 the `bindata` module provides three convenience classes for printing: **BinInt**, **BinHex** and **BinStr**.
 
 ##Full Example
-For a full detailled example of **libparse** usage, check **dexlib** at https://github.com/rchiossi/libparse
+For a full detailled example of **libparse** usage, check **dexlib** at https://github.com/rchiossi/dexlib
