@@ -86,8 +86,8 @@ class Printer(object):
 
         data = '\n'
 
-        for i in xrange(len(obj.data)):
-            line = self.parse(obj.data[i],padding)
+        for i,item in enumerate(obj.data):
+            line = self.parse(item,padding)
             tokens = line.split('\n')
             tokens[0] = '%s [%d] {' % (tokens[0][:-1],i)
             data += '\n'.join(tokens) + '\n'

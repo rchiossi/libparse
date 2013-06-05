@@ -190,7 +190,7 @@ class EntryList(object):
         elif issubclass(offset.__class__,(BinData,)):
             self.offset = offset
         else:
-            raise Exception('Invalid type for EntryList offset')
+            raise Exception('Invalid type for EntryList offset: %s' % offset.__class__)
 
         bstream.seek(int(self.offset))
 
@@ -200,7 +200,7 @@ class EntryList(object):
         elif issubclass(size.__class__,(BinData,)):
             self.size = size
         else:
-            raise Exception('Invalid type for EntryList size')
+            raise Exception('Invalid type for EntryList size: %s' % size.__class__)
 
 
         for i in xrange(int(self.size)):
@@ -275,6 +275,6 @@ class EntryTable(object):
         return None
 
     def __setitem__(self, key, value):
-        for i in xrange(len(self.data)):
-            if int(self.data[i].offset) == int(offset):
+        for i,item in enumerate(self.data):
+            if int(item.offset) == int(offset):
                 self.data[i] = value
