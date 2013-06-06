@@ -269,7 +269,7 @@ class EntryTable(object):
 
     def __getitem__(self, key):
         for entry in self.data:
-            if int(entry.offset) == int(offset):
+            if int(entry.offset) == int(key):
                 return entry
 
         return None

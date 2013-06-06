@@ -37,7 +37,7 @@ class Printer(object):
         elif issubclass(obj.__class__,(EntryTable,)):
             data += '\n' + self._parse_entry_table(obj)
         else:
-            raise('Invalid class for Parser: %s' % obj.__class__)
+            raise Exception('Invalid class for Parser: %s' % obj.__class__)
 
         return data
 
